@@ -1,5 +1,5 @@
 pipeline {
-    agent node1
+    agent slave-01
     environment {
         //be sure to replace "willbla" with your own Docker Hub username
         DOCKER_IMAGE_NAME = "godfather/train-schedule"
