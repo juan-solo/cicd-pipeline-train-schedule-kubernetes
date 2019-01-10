@@ -51,6 +51,7 @@ pipeline {
                 input 'Deploy to Production?'
                 milestone(1)
                 sh 'kubectl get pods'
+                sh 'kubectl create ns stg'
                 sh 'kubectl --namespace=stg apply -f train-schedule-kube.yml'
                 sh 'kubectl get pods'
 
