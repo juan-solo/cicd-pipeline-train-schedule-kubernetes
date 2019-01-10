@@ -46,6 +46,7 @@ pipeline {
             steps {
                 //input 'Deploy to Production?'
                 //milestone(1)
+                sh 'kubectl get pods'
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
                     configs: 'train-schedule-kube.yml',
