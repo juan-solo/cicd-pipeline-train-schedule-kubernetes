@@ -52,7 +52,7 @@ pipeline {
                 milestone(1)
                 sh 'kubectl get pods'
                 sh 'kubectl --namespace=stg apply -f train-schedule-kube.yml'
-
+                sh 'kubectl get pods'
 
 
             }
