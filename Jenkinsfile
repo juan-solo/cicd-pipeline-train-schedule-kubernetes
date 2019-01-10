@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'slave-03'
+        }
+    }
 
     environment {
         //be sure to replace "willbla" with your own Docker Hub username
