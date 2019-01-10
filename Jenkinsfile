@@ -48,21 +48,18 @@ pipeline {
                 branch 'master'
             }
             steps {
-                //input 'Deploy to Production?'
-                //milestone(1)
+                input 'Deploy to Production?'
+                milestone(1)
                 sh 'kubectl get pods'
 
 
-                kubernetesDeploy {
-
-                        configs('train-schedule-kube.yml')
-                        credentialsType('Fill credentials details directly')
-                        enableConfigSubstitution(true)
-                        kubeconfigId('kubeconfig')
-                        secretNamespace('dafault')
+                kubernetesDeploy(
+                    kubeconfigId: 'kubeconfig',
+                    configs: 'train-schedule-kube.yml',
+                    enableConfigSubstitution: true
 
 
-                }
+                )
             }
         }
     }
