@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'slave-01'
+            label 'slave-03'
         }
     }
     environment {
