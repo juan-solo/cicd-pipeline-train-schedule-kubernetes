@@ -51,15 +51,10 @@ pipeline {
                 input 'Deploy to Production?'
                 milestone(1)
                 sh 'kubectl get pods'
+                sh 'kubectl --namespace=stg apply -f train-schedule-kube.yml'
 
 
-                kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube.yml',
-                    enableConfigSubstitution: true
 
-
-                )
             }
         }
     }
