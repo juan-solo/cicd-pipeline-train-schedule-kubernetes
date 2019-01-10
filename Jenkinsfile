@@ -54,14 +54,14 @@ pipeline {
 
 
                 kubernetesDeploy {
-                    context {
+
                         configs('train-schedule-kube.yml')
                         credentialsType('Fill credentials details directly')
                         enableConfigSubstitution(true)
                         kubeconfigId('kubeconfig')
                         secretNamespace('dafault')
 
-                    }
+
                 }
             }
         }
